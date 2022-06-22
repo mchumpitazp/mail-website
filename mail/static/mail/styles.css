@@ -1,0 +1,155 @@
+textarea {
+    min-height: 400px;
+    white-space: pre-wrap;
+}
+
+#website {
+    margin: 0px 0px;
+    padding: 0px 0px;
+    width: 100%;
+}
+
+#header {
+    margin: 16px 5px 0px 20px;
+    padding: 0px 0px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header-right {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+#header-right p{
+    margin: 0px 0px;
+}
+
+#body {
+    padding: 0px 40px 0px 0px;
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 20px;
+}
+
+#body-left {
+    display: flex;
+    flex-flow: column;
+    width: 220px;
+    max-width: 220px;
+    min-width: 220px;
+}
+
+#body-right {
+    display: flex;
+    flex-flow: column;
+    flex: 1;
+}
+
+#emails-view {
+    display: flex;
+    flex-direction: column;
+}
+
+.single-email-container {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    background-color: #F2F2F2;
+    border: 1px solid #CCD6D8;
+    padding: 0px 10px;
+    
+}
+
+.single-email-container:hover {
+    border-color: #776765;
+    border-width: 2px;
+}
+
+.single-email-container p {
+    margin: 5px 0;
+}
+
+/* flex is the shorthand for flex-grow, flex-shrink and flex-basis */
+/* flex: 2 0 == flex-grow: 2; flex-shrink: 0; flex-basos: 0% */
+.single-email-emails {
+    flex: 2 0;
+    font-weight: bold;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.single-email-subject {
+    flex: 3 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.single-email-timestamp {
+    flex: 1 0;
+    font-size: small;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#emai-content-header {
+    margin: 10px 0px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 20px;
+}
+
+#emai-content-header h4 {
+    margin: 0;
+}
+
+#email-details-table td {
+    font-size: small;
+    padding: 3px 10px;
+}
+
+.btn-compose {
+    margin: 0px 0px 15px 15px;
+	background-color: white;
+	font-weight: bold;
+	font-size: 13px;
+    color: #B3320E;
+    height: 40px;
+    width: 80%;
+	border-radius: 20px;
+	border: 1px solid #DB3A0D;
+}
+
+.btn-compose:hover {
+	box-shadow: 0px 0px 4px #b1b1b1;
+	border: 1px solid #B3320E;
+}
+
+.btn-light {
+    background-color: white;
+    text-align: left;
+    border: none;
+    padding-left: 20px;
+}
+
+.btn-light, .btn-light:hover {
+    border-radius: 20px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.btn-light:focus{
+    background-color: lightgray;
+    box-shadow: none;
+}

@@ -1,0 +1,80 @@
+{% extends "mail/layout.html" %}
+{% load static %}
+
+{% block body %}
+    <section id="header">
+        <div id="header-left">
+            <img style="width: 120px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2WdtWKYIx09KC9jN3L87mgntqtQwN1lMf0Q&usqp=CAU">
+        </div>
+        <div id="header-right">
+            <p class="nav-link">Signed in as <strong id="user-email">{{ request.user.email }}</strong></p>
+            <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+        </div>
+    </section>
+    
+    <hr>
+    
+    <section id="body">
+        <div id="body-left">
+            <button class="btn-compose" id="compose">
+                <img style="width: 20px;" src="https://vinoaj.com/wp-content/uploads/2017/11/gmail-icon.png" />
+                &nbsp Compose
+            </button>
+            <button class="btn btn-light" id="inbox">Inbox</button>
+            <button class="btn btn-light" id="sent">Sent</button>
+            <button class="btn btn-light" id="archived">Archived</button>
+        </div>
+        
+        <div id="body-right">
+            <div id="emails-view">
+            </div>
+        
+            <div id="compose-view">
+                <h3>New Email</h3>
+                <form id="compose-form">
+                    <div class="form-group">
+                        From: <input disabled class="form-control" value="{{ request.user.email }}">
+                    </div>
+                    <div class="form-group">
+                        To: <input id="compose-recipients" class="form-control">
+                    </div>
+        
+                    <div id="compose-recipients-done" class="btn-toolbar"></div>
+                    
+                    <div id="compose-subject-container" class="form-group">
+                        <input class="form-control" id="compose-subject" placeholder="Subject">
+                    </div>
+                    <textarea class="form-control" id="compose-body" placeholder="Body"></textarea>
+                    <br>
+                    <input id="compose-submit" type="submit" class="btn btn-primary"/>
+                </form>
+            </div>
+        
+            <div id="email-content-view">
+                <div id="emai-content-header">
+                    <h4 id="email-content-subject"></h4>
+                    <button class="btn btn-sm btn-outline-primary" id="reply">Reply</button>
+                    <button class="btn btn-sm btn-outline-primary" id="archive">Archive</button>
+                    <button class="btn btn-sm btn-outline-primary" id="unarchive">Unarchive</button>
+                    <p id="email-details-id" hidden></p>
+                </div>
+                
+                <table id="email-details-table">
+                    <tr><td><b>From:</b></td><td id="email-details-from"></td></tr>
+                    <tr><td><b>To:</b></td><td id="email-details-to"></td></tr>
+                    <tr><td><b>Subject:</b></td><td id="email-details-subject"></td></tr>
+                    <tr><td><b>Timestamp:</b></td><td id="email-details-timestamp"></td></tr>
+                </table>
+                
+                <br>
+                <textarea class="form-control" id="email-details-body" disabled></textarea>
+            </div>
+        </div>
+    </section>
+
+     
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'mail/inbox.js' %}"></script>
+{% endblock %}
